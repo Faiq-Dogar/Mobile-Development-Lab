@@ -30,11 +30,13 @@ public class imagePicker extends AppCompatActivity {
     }
 
     public void OpenGallery(View view) {
-        Intent intent = new Intent();
+        /*Intent intent = new Intent();
         intent.setType("image/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 102);
+        startActivityForResult(intent, 102);*/
+
+        imageView.setImageResource(R.drawable.gojo);
     }
 
     @Override
