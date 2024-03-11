@@ -59,4 +59,13 @@
     <string name="save_pref">Save Pref</string>
     <string name="name">Name</string>
     <string name="save_into_file">Save into file</string>
+    <string name="txtalertdailog">TextView</string>
+    <string name="open_dailog">Open Dailog</string>
+    <string name="txt1">txt1</string>
+    <string name="txt2">txt2</string>
+    <string name="todo">TODO</string>
+    <string name="btn1">Button</string>
+    <string name="btn2">Button</string>
+    <string name="play">play</string>
+    <string name="stop">Stop</string>
 </resources>
