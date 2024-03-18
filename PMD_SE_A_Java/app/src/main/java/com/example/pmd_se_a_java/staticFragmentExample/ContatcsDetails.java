@@ -29,5 +29,15 @@ public class ContatcsDetails extends Fragment{
         arrayLength = MyContactsMainActivity.contactsArray.length;
 
     }
-    
+    public int getshowIndex(){
+        return currentIndex;
+    }
+
+    public void ContactIndex(int currentIndex){
+        if(currentIndex < 0 || currentIndex >= arrayLength){
+            return;
+        }
+       this.currentIndex = currentIndex;
+        textview.setText(MyContactsMainActivity.contactDetails[currentIndex]);
+    }
 }

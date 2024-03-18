@@ -11,11 +11,16 @@
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:name="com.example.pmd_se_a_java.staticFragmentExample.Contacts"
+
         ></fragment>
 
     <fragment
+        android:id="@+id/contactsdetails"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="2"
+        android:name="com.example.pmd_se_a_java.staticFragmentExample.ContatcsDetails"
+
         ></fragment>
 </LinearLayout>
