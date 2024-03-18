@@ -68,6 +68,18 @@
     <string name="btn2">Button</string>
     <string name="play">play</string>
     <string name="stop">Stop</string>
+    <string name="add_contact" />
+    <string name="contacts">\n</string>
+    <string name="firstname" />
+    <string name="secondname" />
+    <string name="phone_number" />
+    <string name="email" />
+    <string name="home_address" />
+    <string name="buttonsavetosql" />
+    <string name="save_info">Save Info</string>
+    <string name="add">Add</string>
+    <string name="deletefromdb">Delete</string>
+    <string name="update">Update</string>
 
     <string-array name="contacts_array">
         <item>Ali</item>

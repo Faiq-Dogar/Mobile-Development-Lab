@@ -6,11 +6,12 @@ import android.os.Bundle;
 
 import com.example.pmd_se_a_java.R;
 
-public class MaSQLiteinActivity extends AppCompatActivity {
-
+public class SQLiteMainActivity extends AppCompatActivity {
+    DbTools dbTools;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ma_sqlitein);
+        dbTools = new DbTools((getApplicationContext()));
     }
 }

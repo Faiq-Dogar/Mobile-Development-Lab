@@ -22,7 +22,7 @@
             android:name=".SQLiteExample.ContactEntry"
             android:exported="false" />
         <activity
-            android:name=".SQLiteExample.MaSQLiteinActivity"
+            android:name=".SQLiteExample.SQLiteMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".staticFragmentExample.contactsDeta8ils"
+            android:name=".staticFragmentExample.contactsDetails"
             android:exported="false" />
         <activity
             android:name=".CommunicationBwFragments.CM_ExampleMainActivity"
