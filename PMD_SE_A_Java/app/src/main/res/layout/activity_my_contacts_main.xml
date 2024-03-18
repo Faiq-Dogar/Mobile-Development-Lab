@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".staticFragmentExample.MyContactsMainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <fragment
+        android:id="@+id/contactsfragment"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        andoid:layout_weight="1"
+        ></fragment>
+
+    <fragment
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        andoid:layout_weight="2"
+></fragment>
+</LinearLayoutCompat>
