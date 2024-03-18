@@ -68,4 +68,23 @@
     <string name="btn2">Button</string>
     <string name="play">play</string>
     <string name="stop">Stop</string>
+
+    <string-array name="contacts_array">
+        <item>Ali</item>
+        <item>Ahmed</item>
+        <item>Uzair</item>
+        <item>Hamid</item>
+        <item>Nasir</item>
+        <item>Nawaz Sharif</item>
+    </string-array>
+
+    <string-array name="details_array">
+        <item>Details of Ali</item>
+        <item>Details of Ahmed</item>
+        <item>Details of Uzair</item>
+        <item>Details of Hamid</item>
+        <item>Details of Nasir</item>
+        <item>Details of Nawaz Sharif</item>
+    </string-array>
+
 </resources>

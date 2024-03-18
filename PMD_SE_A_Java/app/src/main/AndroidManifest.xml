@@ -16,9 +16,6 @@
             android:name=".staticFragmentExample.contactsDeta8ils"
             android:exported="false" />
         <activity
-            android:name=".staticFragmentExample.Contacts"
-            android:exported="false" />
-        <activity
             android:name=".CommunicationBwFragments.CM_ExampleMainActivity"
             android:exported="true">
             <intent-filter>

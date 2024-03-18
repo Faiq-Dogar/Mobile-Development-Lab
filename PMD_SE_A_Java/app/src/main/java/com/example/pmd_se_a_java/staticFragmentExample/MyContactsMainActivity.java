@@ -10,6 +10,9 @@ import com.example.pmd_se_a_java.R;
 
 public class MyContactsMainActivity extends AppCompatActivity implements ButtonPressListener.OnButtonPressListener {
 
+    public static String[] contactsArray;
+    public static String[] contactDetails;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,7 @@ public class MyContactsMainActivity extends AppCompatActivity implements ButtonP
     public void onButtonPressed(String message) {
         SecondFragment secondFragment = (SecondFragment) getSupportFragmentManager().findFragmentById(R.id.fragment2);
         secondFragment.onFragmentInteraction(message);
+        contactsArray = getResources().getStringArray(R.array.contacts_array);
+        contactDetails = getResources().getStringArray(R.array.details_array);
     }
 }

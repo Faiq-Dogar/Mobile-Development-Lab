@@ -1,16 +1,41 @@
 package com.example.pmd_se_a_java.staticFragmentExample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.ListFragment;
 
 import com.example.pmd_se_a_java.R;
 
-public class Contacts extends AppCompatActivity {
+public class Contacts extends ListFragment {
+    public ListSelectionListener mlistener = null;
+    public interface ListSelectionListener{
+        public void onSelection(int position);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contacts);
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mlistener = (ListSelectionListener) getActivity();
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.contacttextview, MyContactsMainActivity.contactsArray));
+    }
+
+    @Override
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
+        getListView().setItemChecked(position, true);
+        mlistener.onSelection(position);
     }
 }
