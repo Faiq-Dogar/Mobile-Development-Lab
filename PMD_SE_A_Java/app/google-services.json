@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1095632893428",
+    "project_id": "pmd-se-a-java-8aeb8",
+    "storage_bucket": "pmd-se-a-java-8aeb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095632893428:android:6ff65c35df6b342ee035a1",
+        "android_client_info": {
+          "package_name": "com.example.pmd_se_a_java"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk34zuTqtgSy-GE4mEYwewcC8tIwc-Zvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
