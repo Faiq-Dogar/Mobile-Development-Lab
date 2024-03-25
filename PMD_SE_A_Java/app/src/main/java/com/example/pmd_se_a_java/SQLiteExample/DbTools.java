@@ -2,10 +2,12 @@ package com.example.pmd_se_a_java.SQLiteExample;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DbTools extends SQLiteOpenHelper {
@@ -48,5 +50,42 @@ public class DbTools extends SQLiteOpenHelper {
             Log.d("TAG", "New Contact insertion is failed");
         }
         //db.close();
+    }
+
+
+    public ArrayList<HashMap<String,String>> getAllContacts(){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<HashMap<String,String>> contactList = new ArrayList<HashMap<String,String>>();
+        String Query = "SELECT * FROM CONTACTS";
+        Cursor cursor = db.rawQuery(Query, null);
+        if(cursor.moveToFirst()){
+            do {
+                HashMap<String,String> contact = new HashMap<>();
+                contact.put("_id",cursor.getString(0));
+                contact.put("firstName",cursor.getString(1));
+                contact.put("secondName",cursor.getString(2));
+                contact.put("phoneNumber",cursor.getString(3));
+                contact.put("emailAddress",cursor.getString(4));
+                contact.put("homeAddress",cursor.getString(5));
+                contactList.add(contact);
+            }while(cursor.moveToNext());
+        }
+        return contactList;
+    }
+
+    public HashMap<String, String> getsingleContact(String id) {
+        SQLiteDatabase db = getReadableDatabase();
+        HashMap<String, String> singleContact = new HashMap<String, String>();
+        String Query = "SELECT * FROM CONTACTS WHERE _id = " + id;
+        Cursor cursor = db.rawQuery(Query, null);
+        if (cursor.moveToFirst()) {
+            singleContact.put("_id", cursor.getString(0));
+            singleContact.put("firstName", cursor.getString(1));
+            singleContact.put("secondName", cursor.getString(2));
+            singleContact.put("phoneNumber", cursor.getString(3));
+            singleContact.put("emailAddress", cursor.getString(4));
+            singleContact.put("homeAddress", cursor.getString(5));
+        }
+        return singleContact;
     }
 }
