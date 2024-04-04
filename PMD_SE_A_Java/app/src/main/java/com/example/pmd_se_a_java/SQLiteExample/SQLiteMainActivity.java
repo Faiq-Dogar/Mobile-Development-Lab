@@ -31,7 +31,7 @@ public class SQLiteMainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
                 Intent intent = new Intent(SQLiteMainActivity.this, EditContactEntry.class);
-                intent.putExtra("id", String.valueOf(id + 1));
+                intent.putExtra("id", String.valueOf(id+1));
                 startActivity(intent);
             }
         });

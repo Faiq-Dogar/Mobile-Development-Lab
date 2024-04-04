@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PMD_SE_A_Java"
         tools:targetApi="31">
         <activity
+            android:name=".SQLiteExample.UpdateContactEntry"
+            android:exported="false" />
+        <activity
             android:name=".SensorExamples.SensorExampleOneMainActivity"
             android:exported="true">
             <intent-filter>

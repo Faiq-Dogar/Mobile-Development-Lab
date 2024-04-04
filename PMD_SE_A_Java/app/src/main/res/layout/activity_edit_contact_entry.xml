@@ -7,6 +7,7 @@
     android:padding="16dp"
     tools:context=".SQLiteExample.EditContactEntry">
 
+
     <EditText
         android:id="@+id/editfirstname"
         android:layout_width="232dp"
@@ -83,6 +84,7 @@
         android:layout_width="117dp"
         android:layout_height="59dp"
         android:layout_below="@+id/edithomeaddress"
+        android:onClick="update"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="51dp"
@@ -102,5 +104,6 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="17dp"
         android:layout_toEndOf="@+id/btnupdate"
+        android:onClick="onDelete"
         android:text="@string/deletefromdb" />
 </RelativeLayout>

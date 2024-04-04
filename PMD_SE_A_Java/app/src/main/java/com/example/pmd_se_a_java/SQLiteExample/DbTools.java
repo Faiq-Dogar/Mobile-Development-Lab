@@ -6,11 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.example.pmd_se_a_java.staticFragmentExample.Contacts;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DbTools extends SQLiteOpenHelper {
+    int id_counter =0;
     public DbTools(Context context){
         super(context,"ContactsDB", null ,1);
         Log.d("TAG", "Database Created");
@@ -18,7 +22,7 @@ public class DbTools extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createdQuery = "CREATE TABLE CONTACTS("+
-                "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "_id INTEGER PRIMARY KEY ," +
                 "firstName TEXT," +
                 "secondName TEXT,"+
                 "phoneNumber TEXT,"+
@@ -32,10 +36,27 @@ public class DbTools extends SQLiteOpenHelper {
 
     }
 
+    public void updateContact(String id, HashMap<String, String> contact) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("firstName", contact.get("firstName"));
+        contentValues.put("secondName", contact.get("secondName"));
+        contentValues.put("phoneNumber", contact.get("phoneNumber"));
+        contentValues.put("emailAddress", contact.get("emailAddress"));
+        contentValues.put("homeAddress", contact.get("homeAddress"));
+
+        int rowsAffected = db.update("CONTACTS", contentValues, "_id=?", new String[]{id});
+        if (rowsAffected > 0) {
+            Log.d("TAG", "Contact updated successfully");
+        } else {
+            Log.d("TAG", "Failed to update contact");
+        }
+    }
+
     public void AddContact(HashMap<String, String> contact){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("_id", contact.get("_id"));
+        contentValues.put("_id", ++id_counter);
         contentValues.put("firstName",contact.get("firstName"));
         contentValues.put("secondName",contact.get("secondName"));
         contentValues.put("phoneNumber",contact.get("phoneNumber"));
@@ -61,7 +82,7 @@ public class DbTools extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do {
                 HashMap<String,String> contact = new HashMap<>();
-                contact.put("_id",cursor.getString(0));
+                /*contact.put("_id",cursor.getString(0));*/
                 contact.put("firstName",cursor.getString(1));
                 contact.put("secondName",cursor.getString(2));
                 contact.put("phoneNumber",cursor.getString(3));
@@ -87,5 +108,12 @@ public class DbTools extends SQLiteOpenHelper {
             singleContact.put("homeAddress", cursor.getString(5));
         }
         return singleContact;
+    }
+
+    public int deleteContact(String id){
+        SQLiteDatabase db = getWritableDatabase();
+        int number =   db.delete("CONTACTS", "_id=?", new String[]{id});
+        id_counter--;
+        return number;
     }
 }
