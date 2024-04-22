@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -20,9 +21,15 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.pmd_se_a_java.databinding.ActivityMaps2Binding;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -46,13 +53,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        locationListener = new LocationListener() {
+        /*locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(@NonNull Location location) {
                 /*Log.d("TAG", location.toString());
                 LatLng obj = new LatLng(location.getLatitude(),location.getLongitude());
                 mMap.addMarker(new MarkerOptions().position(obj).title("NEW POSITION"));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(obj, 7));*/
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(obj, 7));
                 mapOnUserLocation(location, "User current Location");
             }
 
@@ -65,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         else{
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             Location userLastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        }
+        }*/
 
 
     }
@@ -90,9 +97,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
 
-        // Add a marker in Sydney and move the camera
+
         LatLng address1 = new LatLng(31.60592227 ,73.0364344);
+        LatLng address2 = new LatLng(41.60, 83.03);
+        LatLng address3 = new LatLng(51.60, 93.03);
+        LatLng address4 = new LatLng(61.60, 103.03);
+        PolylineOptions polylineOptions = new PolylineOptions()
+                .add(address1)
+                .add(address2)
+                .add(address3)
+                .add(address4);
+        Polyline polyline = mMap.addPolyline(polylineOptions);
+
+        CircleOptions options = new CircleOptions()
+                .center(address1)
+                        .radius(2000)
+                                .strokeWidth(10)
+                                        .strokeColor(Color.RED)
+                                                .fillColor(Color.BLUE);
+        Circle circle = mMap.addCircle(options);
         mMap.addMarker(new MarkerOptions().position(address1).title("Marker in Loonywala").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(address1, 5));
+
     }
 }
+
+
+
+
+
+
+
