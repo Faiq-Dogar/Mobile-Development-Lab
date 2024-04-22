@@ -128,7 +128,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         .strokeColor(Color.RED)
                                                 .fillColor(Color.BLUE);
         Circle circle = mMap.addCircle(options);
-        mMap.addMarker(new MarkerOptions().position(address1).title("Marker in Loonywala").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+        mMap.addMarker(new MarkerOptions().position(address1)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.car)).title("Marker in Loonywala"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(address1, 5));
 
     }
