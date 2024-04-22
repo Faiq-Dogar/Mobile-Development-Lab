@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +14,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PMD_SE_A_Java"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY" />
+
+        <activity
+            android:name=".GoogleMapAPI.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BroadCastReceiver.IncomingCallReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".BroadCastReceiver.Example2MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".RestAPI.RestAPIMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +67,7 @@
             android:exported="false" />
         <activity
             android:name=".SensorExamples.SensorExampleOneMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +76,7 @@
         </activity>
         <activity
             android:name=".FirebaseExamples.FirebaseExampleTwoMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +85,7 @@
         </activity>
         <activity
             android:name=".FirebaseExamples.FirebaseExampleOneMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,7 +97,7 @@
 
         <activity
             android:name=".BroadCastReceiver.BroadCastExampleOneMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,7 +115,7 @@
             android:exported="false" />
         <activity
             android:name=".SQLiteExample.SQLiteMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -88,7 +127,7 @@
             android:exported="false" />
         <activity
             android:name=".CommunicationBwFragments.CM_ExampleMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -97,7 +136,7 @@
         </activity>
         <activity
             android:name=".staticFragmentExample.MyContactsMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -106,7 +145,7 @@
         </activity>
         <activity
             android:name=".FragmentExamples.FragmentExampleOneMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -115,7 +154,7 @@
         </activity>
         <activity
             android:name=".ServiceExample.BoundServiceExample.BoundServiceMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -124,7 +163,7 @@
         </activity>
         <activity
             android:name=".cardViewExample.CardViewMainActivityMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -133,7 +172,7 @@
         </activity>
         <activity
             android:name=".RecyclerViewExample.RecyclerViewMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -142,7 +181,7 @@
         </activity>
         <activity
             android:name=".FileHandling.FileHandlingExampleOne"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -154,7 +193,7 @@
             android:exported="false" />
         <activity
             android:name=".SharedPreferenceExample.SPExampleTwoMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -163,7 +202,7 @@
         </activity>
         <activity
             android:name=".SharedPreferenceExample.SharedPreferenceExampleOne"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -172,7 +211,7 @@
         </activity>
         <activity
             android:name=".ListViewExamples.ImageAndTextViewExample.ImageAndTextMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -181,7 +220,7 @@
         </activity>
         <activity
             android:name=".ListViewExamples.MultiColumnListView"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -190,7 +229,7 @@
         </activity>
         <activity
             android:name=".ListViewExamples.ListViewExampleOne"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -199,7 +238,7 @@
         </activity>
         <activity
             android:name=".IntentActions.imagePicker"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -208,7 +247,7 @@
         </activity>
         <activity
             android:name=".IntentActions.OpenCamera"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -220,7 +259,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity3"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -231,7 +270,7 @@
             android:name=".MySecondActivity"
             android:exported="true"
             android:label="@string/title_activity_my_second"
-            android:theme="@style/Theme.PMD_SE_A_Java">
+            android:theme="@style/Theme.PMD_SE_A_Java" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -240,7 +279,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -249,7 +288,7 @@
         </activity>
         <activity
             android:name=".asyncClassActivity.webContentDownloadMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -258,7 +297,7 @@
         </activity>
         <activity
             android:name=".AlertDailogExample.AlertDailogMainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
