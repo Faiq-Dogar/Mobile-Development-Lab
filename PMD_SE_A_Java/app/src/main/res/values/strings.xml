@@ -101,5 +101,5 @@
         <item>Details of Nawaz Sharif</item>
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
-
+    <string name="google_maps_key" templaeMergeStrategy = "preserve" translatable="false">AIzaSyBbbfGmD18ryiEQIqxVqV09APR8fwhJAuY</string>
 </resources>
