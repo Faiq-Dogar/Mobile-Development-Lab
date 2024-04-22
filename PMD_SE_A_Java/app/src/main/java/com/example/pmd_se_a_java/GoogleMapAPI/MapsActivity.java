@@ -99,15 +99,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         LatLng address1 = new LatLng(31.60592227 ,73.0364344);
-        LatLng address2 = new LatLng(41.60, 83.03);
+        LatLng address2 = new LatLng(35.60, 75.03);
         LatLng address3 = new LatLng(51.60, 93.03);
         LatLng address4 = new LatLng(61.60, 103.03);
-        PolylineOptions polylineOptions = new PolylineOptions()
+        /*PolylineOptions polylineOptions = new PolylineOptions()
                 .add(address1)
                 .add(address2)
                 .add(address3)
                 .add(address4);
-        Polyline polyline = mMap.addPolyline(polylineOptions);
+        Polyline polyline = mMap.addPolyline(polylineOptions);*/
+
+
+        PolygonOptions polygonOptions = new PolygonOptions()
+                .add(address1)
+                .add(address2)
+                .add(address3)
+                .add(address4)
+                .fillColor(Color.RED);
+        Polygon polylgon = mMap.addPolygon(polygonOptions);
+
+
+
 
         CircleOptions options = new CircleOptions()
                 .center(address1)
