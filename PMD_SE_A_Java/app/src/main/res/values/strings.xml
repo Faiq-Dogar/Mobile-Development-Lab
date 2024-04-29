@@ -101,5 +101,11 @@
         <item>Details of Nawaz Sharif</item>
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="google_maps_key" templaeMergeStrategy = "preserve" translatable="false">AIzaSyBbbfGmD18ryiEQIqxVqV09APR8fwhJAuY</string>
+    <string name="google_maps_key" templaeMergeStrategy="preserve" translatable="false">AIzaSyBbbfGmD18ryiEQIqxVqV09APR8fwhJAuY</string>
+    <string name="rating">Rating:</string>
+    <string name="company">Company:</string>
+    <string name="price">Price:</string>
+    <string name="name1">Name:</string>
+    <string name="img">img</string>
+    <string name="rate_this_item">Rate this item</string>
 </resources>
