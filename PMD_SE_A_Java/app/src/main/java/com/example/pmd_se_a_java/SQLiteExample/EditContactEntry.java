@@ -60,6 +60,7 @@ public class EditContactEntry extends AppCompatActivity {
         int number = dbTools.deleteContact(id);
         if(number != 0){
             Toast.makeText(EditContactEntry.this, "ID : " + id + " deleted", Toast.LENGTH_SHORT).show();
+            finish();
         }
         else{
             Toast.makeText(EditContactEntry.this, "An Error Occurred", Toast.LENGTH_SHORT).show();

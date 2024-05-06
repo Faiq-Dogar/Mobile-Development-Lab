@@ -1,13 +1,17 @@
 package com.example.pmd_se_a_java.SQLiteExample;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.pmd_se_a_java.AlertDailogExample.AlertDailogMainActivity;
 import com.example.pmd_se_a_java.R;
 
 import java.util.HashMap;
@@ -31,14 +35,27 @@ public class NewContactEntry extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
                 HashMap<String,String> contact = new HashMap<String, String>();
                 contact.put("firstName", firstName.getText().toString());
                 contact.put("secondName", secondName.getText().toString());
                 contact.put("phoneNumber", phoneNumber.getText().toString());
                 contact.put("emailAddress", emailAddress.getText().toString());
                 contact.put("homeAddress", homeAddress.getText().toString());
-                dbTools.AddContact(contact);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewContactEntry.this);
+                builder.setMessage("Are you sure...").setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dailog, int which){
+
+                        dbTools.AddContact(contact);
+                        Log.d("TAG","Data Saved");
+                    }
+                }).setNegativeButton("cancel",null);
+                AlertDialog alert = builder.create();
+                alert.show();
+
+
+
             }
         });
     }

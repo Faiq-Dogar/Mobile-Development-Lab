@@ -20,7 +20,7 @@ public class DataDisplay extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapterCardView);
+        /*recyclerView.setAdapter(adapterCardView);*/
     }
 
 }
